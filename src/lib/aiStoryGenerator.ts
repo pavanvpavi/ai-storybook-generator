@@ -123,8 +123,17 @@ Rules:
 
 
 
-  const story =
-    JSON.parse(content);
+  const cleanedContent =
+  content
+    .replace(/```json/g, "")
+    .replace(/```/g, "")
+    .trim();
+
+console.log("AI RESPONSE:");
+console.log(cleanedContent);
+
+const story =
+  JSON.parse(cleanedContent);
 
 
 
